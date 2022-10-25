@@ -5,7 +5,7 @@
 
 ```ruby
 git clone https://github.com/TomaEduard/typescript-design-patterns.git
-cd Design-Patterns-In-TypeScript
+cd typescript-design-patterns
 npm install -g typescript
 npm install
 ```
