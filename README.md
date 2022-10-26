@@ -10,14 +10,12 @@ npm install -g typescript
 npm install
 ```
 
-### Because we use <code>ts-node</code> we can compile and run the typescript file directly
+### Because we use <code>ts-node</code> we can compile and run the typescript file directly on <code>*-concept.ts</code> file
 ```
 ts-node ./src/factory/factory-concept.ts
 ```
-
 ## Overview
-*-concept.ts
-
 * Creational
-    - [Factory](src/factory)
+    - [Factory](src/factory/)
     - [Abstract Factory](src/abstract-factory/)
+    - [Adapter](src/adapter/)
