@@ -16,6 +16,8 @@ ts-node ./src/factory/factory-concept.ts
 ```
 
 ## Overview
+*-concept.ts
 
 * Creational
     - [Factory](src/factory)
+    - [Abstract Factory](src/abstract-factory/)
