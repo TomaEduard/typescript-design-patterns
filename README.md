@@ -19,3 +19,4 @@ ts-node ./src/factory/factory-concept.ts
     - [Factory](src/factory/)
     - [Abstract Factory](src/abstract-factory/)
     - [Adapter](src/adapter/)
+    - [Builder](src/builder/)
