@@ -16,6 +16,7 @@ ts-node ./src/factory/factory-concept.ts
 ```
 ## Overview
 * Creational
+    - [Singleton](src/singleton/)
     - [Factory](src/factory/)
     - [Abstract Factory](src/abstract-factory/)
     - [Adapter](src/adapter/)
