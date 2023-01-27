@@ -22,3 +22,4 @@ ts-node ./src/factory/factory-concept.ts
     - [Adapter](src/adapter/)
     - [Builder](src/builder/)
     - [Bridge](src/bridge/)
+    - [Chain of responsibility](src/chain-of-responsibility/)
