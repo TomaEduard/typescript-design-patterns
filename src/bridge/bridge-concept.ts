@@ -1,5 +1,3 @@
-// Bridge Pattern Concept Sample Code
-
 interface IAbstraction {
     method(value: string[]): void
 }
@@ -52,3 +50,4 @@ REFINED_ABSTRACTION_A.method(VALUES)
 
 const REFINED_ABSTRACTION_B = new RefinedAbstractionB(new ConcreteImplementerB())
 REFINED_ABSTRACTION_B.method(VALUES)
+

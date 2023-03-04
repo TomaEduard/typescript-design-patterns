@@ -1,15 +1,15 @@
-// The Chain Of Responsibility Pattern Concept
+// comportamental + creational
 
 interface IHandler {
-    // The Handler Interface that the Successors should implement
-    handle(payload: number): number
+    handle(payload: number): number | void
 }
 
 class Successor1 implements IHandler {
-    // A Concrete Handler
-    handle(payload: number) {
+
+    handle(payload: number): number {
         console.log(`Successor1 payload = ${payload}`)
         const test = Math.floor(Math.random() * 2) + 1
+        // console.log(`test ${test}`)
         if (test === 1) {
             payload += 1
             payload = new Successor1().handle(payload)
@@ -22,31 +22,45 @@ class Successor1 implements IHandler {
 }
 
 class Successor2 implements IHandler {
-    // A Concrete Handler
+
     handle(payload: number) {
         console.log(`Successor2 payload = ${payload}`)
         const test = Math.floor(Math.random() * 3) + 1
+
         if (test === 1) {
             payload = payload * 2
             payload = new Successor1().handle(payload)
+
         } else if (test === 2) {
             payload = payload / 2
             payload = new Successor2().handle(payload)
-        } // if test = 3 then assign no further successors
+        }
+        // daca payload este diferit de 1 sau 2 se returneaza valoarea payload
         return payload
     }
 }
 
 class Chain {
-    // A chain with a default first successor
-    start(payload: number) {
-        // Setting the first successor that will modify the payload
-        return new Successor1().handle(payload)
+    static instance: Chain
+    #payLoad: number
+
+    constructor(table: number) {
+        if (Chain.instance) {
+            this.#payLoad = table;
+            return Chain.instance
+        }
+        this.#payLoad = table
+        Chain.instance = this
+        return Chain.instance
+    }
+
+    start() {
+        return new Successor1().handle(this.#payLoad)
     }
 }
 
-// The Client
-const CHAIN = new Chain()
-const PAYLOAD = 1
-const OUT = CHAIN.start(PAYLOAD)
+const CHAIN = new Chain(1)
+const OUT = CHAIN.start()
+
 console.log(`Finished result = ${OUT}`)
+
